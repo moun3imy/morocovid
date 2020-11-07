@@ -2,6 +2,7 @@
 env/
 pdfs/
 pdfBulletins/
+__pycache__/
 
 
 # files
