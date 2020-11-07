@@ -17,3 +17,7 @@
 
 6. run the project : 
 ```python main.py```
+
+# Results
+
+you get the results in the file ```corona.csv```, generated in the same folder
