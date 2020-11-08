@@ -57,7 +57,7 @@ df = pd.read_csv("output.csv")
 # delete header rows
 updated_df = df.drop([df.index[0],df.index[1],df.index[2]])
 # rename columns
-updated_df.columns = ["Indice", "Régions","Nouveaux Cas","Décès","Régions Ar"]
+updated_df.columns = [ "Régions","Nouveaux Cas","Décès","Régions Ar"]
 # replace NaN with 0
 updated_df = updated_df.fillna(0)
 #write data to corona.csv
