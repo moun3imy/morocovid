@@ -21,3 +21,4 @@
 # Results
 
 you get the results in the file ```corona.csv```, generated in the same folder
+the link is : https://github.com/moun3imy/morocovid/blob/master/corona.csv
