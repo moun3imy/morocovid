@@ -43,10 +43,10 @@ final_url = base_url_november.format(day,month,year)
 print(final_url)
 
 #get the pdf
-""" with open(filename, 'wb') as f:
+with open(filename, 'wb') as f:
     response = requests.get(final_url,headers = headers).content
     print(response)
-    f.write(response) """
+    f.write(response)
 # analyze the pdf
 # this will generate the data in csv format in the file output.csv
 tabula.convert_into("pdfBulletins/corona1.pdf", "output.csv", output_format="csv", pages=[2,3,4],java_options="-Dfile.encoding=UTF8")
