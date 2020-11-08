@@ -3,6 +3,7 @@ env/
 pdfs/
 pdfBulletins/
 __pycache__/
+.vscode/
 
 
 # files
