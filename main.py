@@ -43,10 +43,10 @@ final_url = base_url_november.format(day,month,year)
 print(final_url)
 
 #get the pdf
-with open(filename, 'wb') as f:
+""" with open(filename, 'wb') as f:
     response = requests.get(final_url,headers = headers).content
     print(response)
-    f.write(response)
+    f.write(response) """
 # analyze the pdf
 # this will generate the data in csv format in the file output.csv
 tabula.convert_into("pdfBulletins/corona1.pdf", "output.csv", output_format="csv", pages=[2,3,4],java_options="-Dfile.encoding=UTF8")
@@ -57,11 +57,11 @@ df = pd.read_csv("output.csv")
 # delete header rows
 updated_df = df.drop([df.index[0],df.index[1],df.index[2]])
 # rename columns
-updated_df.columns = ["Régions","Nouveaux Cas","Décès","Régions Ar"]
+updated_df.columns = ["Indice", "Régions","Nouveaux Cas","Décès","Régions Ar"]
 # replace NaN with 0
 updated_df = updated_df.fillna(0)
 #write data to corona.csv
-updated_df.to_csv("corona.csv",index=False)
+updated_df.to_csv("corona.csv",index=True)
 print(updated_df)
 
 
