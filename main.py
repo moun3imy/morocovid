@@ -18,6 +18,34 @@ import datetime
 import tabula
 import pandas as pd
 
+def clean_output() : 
+    with open('output.csv',mode = 'rt', encoding='UTF-8') as f : 
+        with open('output2.csv',mode = 'w+', encoding='UTF-8') as out : 
+            x = 1
+            for line in f :
+                # skip the first 4 lines, which are just titles
+                if x < 5 : 
+                    x+=1
+                    continue
+                    
+                values = line.split(",")
+                #print(values)
+                if len(values) == 4 : 
+                    if len(values[2].replace(" ","")) == 0 : 
+                        values[2] = '0'
+                    final_line = ",".join(values)
+                elif len(values) == 3 : 
+                    #values[1] is either a 2 consecutive digits like "Kénitra,352 5,القنيطرة"
+                    # or just 1 digit, in which case, we must add a 0 after it for the number of deaths like "Benslimane,39,بن سليمان"
+                    numbers = [int(s) for s in values[1].split() if s.isdigit()]
+                    if len(numbers) == 1 : 
+                        values = [values[0],str(numbers[0]),'0',values[2]]
+                        final_line = ",".join(values)
+                    elif len(numbers) == 2 : 
+                        values = [values[0],str(numbers[0]),str(numbers[1]),values[2]]
+                        final_line = ",".join(values)
+                out.write(final_line)
+
 url = "http://www.covidmaroc.ma/Pages/LESINFOAR.aspx"
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36'}
 base_url_november = "http://www.covidmaroc.ma/Documents/BULLETIN/BQ_COVID.{0}.{1}.{2}.pdf"
@@ -43,26 +71,24 @@ final_url = base_url_november.format(day,month,year)
 print(final_url)
 
 #get the pdf
-with open(filename, 'wb') as f:
+""" with open(filename, 'wb') as f:
     response = requests.get(final_url,headers = headers).content
     print(response)
-    f.write(response)
+    f.write(response) """
 # analyze the pdf
 # this will generate the data in csv format in the file output.csv
 tabula.convert_into("pdfBulletins/corona1.pdf", "output.csv", output_format="csv", pages=[2,3,4],java_options="-Dfile.encoding=UTF8")
-# get general statistics from the pdf file
-tabula.convert_into("pdfBulletins/corona1.pdf", "stats-corona.csv", output_format="csv", pages=[1],java_options="-Dfile.encoding=UTF8")
-# send it by mail to me
-df = pd.read_csv("output.csv")
-# delete header rows
-updated_df = df.drop([df.index[0],df.index[1],df.index[2]])
+# read corona.csv to fix it (when the pdf reading file contains only 2 commas, add 0 and a second comma)
+clean_output()
+df = pd.read_csv("output2.csv", header = None)
+
 # rename columns
-updated_df.columns = [ "Régions","Nouveaux Cas","Décès","Régions Ar"]
+df.columns = [ "Régions","Nouveaux Cas","Décès","Régions Ar"]
 # replace NaN with 0
-updated_df = updated_df.fillna(0)
+df = df.fillna(0)
 #write data to corona.csv
-updated_df.to_csv("corona.csv",index=True)
-print(updated_df)
+df.to_csv("corona.csv",index=True)
+print(df)
 
 
 

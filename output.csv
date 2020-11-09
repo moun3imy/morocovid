@@ -1,87 +1,84 @@
-Régions,الحالات الجديدة,الوفيات,جهات
-"",Nouveaux cas,,
-Province et Préfecture,,Décès,عمالات وأقاليم
-"",confirmés,,
-Région Grand Casablanca-Settat,2409,21,جهة الدار البيضاء سطات
-Casablanca,1931,21,الدار البيضاء
-Nouaceur,96,,النواصر
-El Jadida,90,,الجديدة
-Mohammadia,78,,المحمدية
-Settat,67,,سطات
-Médiouna,58,,مديونة
-Berrechid,48,,برشيد
-Benslimane,23,,بن سليمان
-Sidi Bennour,18,,سيدي بنور
-Région Rabat - Salé-Kenitra,1060,11,جهة الرباط سلا القنيطرة
-Salé,284,9,سلا
-Skhirate- Témara,273,,الصخيات-تمارة
-Kénitra,211,,القنيطرة
-Sidi Kacem,100,,سيدي قاسم
-Rabat,95,1,الرباط
-Khémisset,93,,الخميسات
-Sidi Slimane,4,1,سيدي سليمان
-Région de l'Oriental,686,11,جهة الشق
-Oujda-Angad,336,4,وجدة - أنجاد
-Berkane,90,1,بركان
-Guercif,86,,جرسيف
-Nador,77,3,الناظور
-Jerada,42,2,جرادة
-Driouch,32,,الدريوش
-Taourirt,19,,تاوريرت
-Figuig,4,1,فجيج
-Région Souss - Massa,501,1,جهة سوس ماسة
-Agadir-Ida -Ou-Tanane,285,,أكادير إدا وتنان
-Inezgane- Ait Melloul,119,,إنزكان آيت ملول
-Taroudannt,52,,تارودانت
-Tata,23,,طاطا
-Tiznit,12,1,تزنيت
-Chtouka- Ait Baha,10,,اشتوكة آيت باها
-Région Tanger -Tétouan- Al Hoceima,381,10,جهة طنجة تطوان الحسيمة
-Tanger-Assilah,136,1,طنجة-أصيلة
-Larache,44,2,العرائش
-Al Hoceima,41,2,الحسيمة
-Chefchaouen,41,1,شفشاون
-Tétouan,40,3,تطوان
-M'Diq-Fnideq,40,,المضيق الفنيدق
-Ouezzane,38,1,وزان
-Fahs Anjra,1,,الفحص أنجرة
-Région Marrakech- Safi,289,3,جهة مراكش آسف
-Marrakech,200,2,مراكش
-Youssoufia,30,,اليوسفية
-Rehamna,16,,الرحامنة
-Essaouira,15,,الصويرة
-El Kelâa des  Sraghna,10,1,قلعة السراغنة
-Al  Haouz,10,,الحوز
-Safi,8,,آسف
-Région Beni Mellal- Khénifra,176,6,جهة بن ملال خنيفرة
-Khouribga,67,2,خريبكة
-Fquih Ben Salah,51,3,الفقيه بن صالح
-Khénifra,25,,خنيفرة
-Béni Mellal,18,1,بن ملال
-Azilal,15,,أزيلال
-Région Darâa-Tafilalet,103,2,جهة درعة تافيلالت
-Midelt,43,,ميدلت
-Errachidia,28,2,الرشيدية
-Tinghir,18,,تنغي
-Ouarzazate,8,,ورززات
-Zagora,6,,زاكورة
-Région Fès - Meknès,93,2,جهة فاس مكناس
-Fès,34,,فاس
+Régions,الوفيات  الحالات الجديدة,جهات
+"",Nouveaux,
+Province et Préfecture,cas Décès,عمالات وأقاليم
+"",confirmés,
+Région Grand Casablanca-Settat,1563 18,جهة الدار البيضاء سطات
+Casablanca,1222 16,الدار البيضاء
+Nouaceur,72,النواصر
+El Jadida,64,الجديدة
+Mohammadia,46,المحمدية
+Médiouna,43,مديونة
+Benslimane,39,بن سليمان
+Settat,31 2,سطات
+Berrechid,29,برشيد
+Sidi Bennour,17,سيدي بنور
+Région Rabat - Salé-Kenitra,1192 11,جهة الرباط سلا القنيطرة
+Salé,494 3,سلا
+Kénitra,352 5,القنيطرة
+Skhirate- Témara,168 2,الصخيات-تمارة
+Rabat,95 1,الرباط
+Sidi Kacem,55,سيدي قاسم
+Khémisset,23,الخميسات
+Sidi Slimane,5,سيدي سليمان
+Région Souss - Massa,400 10,جهة سوس ماسة
+Agadir-Ida -Ou-Tanane,210 6,أكادير إدا وتنان
+Taroudannt,76 1,تارودانت
+Inezgane- Ait Melloul,60 2,إنزكان آيت ملول
+Tiznit,39,تزنيت
+Chtouka- Ait Baha,15 1,اشتوكة آيت باها
+Région Tanger -Tétouan- Al Hoceima,375 8,جهة طنجة تطوان الحسيمة
+Tanger-Assilah,117 1,طنجة-أصيلة
+Tétouan,92 4,تطوان
+Al Hoceima,60 2,الحسيمة
+M'Diq-Fnideq,56,المضيق الفنيدق
+Larache,30 1,العرائش
+Ouezzane,16,وزان
+Chefchaouen,4,شفشاون
+Région de l'Oriental,280,6,جهة الشق
+Oujda-Angad,92,2,وجدة - أنجاد
+Taourirt,62,,تاوريرت
+Guercif,43,,جرسيف
+Figuig,35,,فجيج
+Berkane,30,2,بركان
+Nador,14,1,الناظور
+Jerada,2,,جرادة
+Driouch,2,1,الدريوش
+Région Marrakech- Safi,268,6,جهة مراكش آسف
+Marrakech,129,4,مراكش
+Essaouira,44,2,الصويرة
+Youssoufia,25,,اليوسفية
+Chichaoua,22,,شيشاوة
+Rehamna,22,,الرحامنة
+El Kelâa des  Sraghna,16,,قلعة السراغنة
+Safi,7,,آسف
+Al  Haouz,3,,الحوز
+Région Darâa-Tafilalet,109,2,جهة درعة تافيلالت
+Midelt,39,,ميدلت
+Errachidia,30,1,الرشيدية
+Tinghir,16,,تنغي
+Zagora,14,,زاكورة
+Ouarzazate,10,1,ورززات
+Région Dakhla-Oued Eddahab,106,0,جهة الداخلة وادي الذهب
+Oued Ed-Dahab,106,,وادي الذهب
+Région Fès - Meknès,102,6,جهة فاس مكناس
+Taza,31,2,تازة
+Fès,29,2,فاس
 Sefrou,14,,صفرو
-Meknès,12,,مكناس
-Boulemane,11,1,بولمان
-Taza,7,,تازة
-El  Hajeb,6,,الحاجب
-Taounate,6,1,تاونات
-Ifrane,3,,إفران
-Région Guelmim –Oued Noun,66,1,جهة كلميم واد نون
-Guelmim,43,1,كلميم
-Tan Tan,14,,طان طان
-Sidi Ifni,7,,سيدي إفن
+Taounate,12,1,تاونات
+Meknès,11,1,مكناس
+Boulemane,3,,بولمان
+El  Hajeb,2,,الحاجب
+Région Beni Mellal- Khénifra,73,4,جهة بن ملال خنيفرة
+Khouribga,31,,خريبكة
+Azilal,17,,أزيلال
+Béni Mellal,14,,بن ملال
+Khénifra,10,1,خنيفرة
+Fquih Ben Salah,1,3,الفقيه بن صالح
+Région Guelmim –Oued Noun,67,4,جهة كلميم واد نون
+Guelmim,55,4,كلميم
+Sidi Ifni,10,,سيدي إفن
 Assa-Zag,2,,آسا الزاك
-Région Laâyoune - Sakia El Hamra,45,1,جهة العيون الساقية الحمراء
-Laâyoune,40,,العيون
-Boujdour,4,1,بوجدور
+Région Laâyoune - Sakia El Hamra,61,0,جهة العيون الساقية الحمراء
+Laâyoune,58,,العيون
+Boujdour,2,,بوجدور
 Tarfaya,1,,طرفاية
-Région Dakhla-Oued Eddahab,27,1,جهة الداخلة وادي الذهب
-Oued Ed-Dahab,27,1,وادي الذهب
