@@ -1,81 +1,72 @@
 ,Régions,Nouveaux Cas,Décès,Régions Ar
-0,Région Grand Casablanca-Settat,1563,18,جهة الدار البيضاء سطات
-1,Casablanca,1222,16,الدار البيضاء
-2,Nouaceur,72,0,النواصر
-3,El Jadida,64,0,الجديدة
-4,Mohammadia,46,0,المحمدية
-5,Médiouna,43,0,مديونة
-6,Benslimane,39,0,بن سليمان
-7,Settat,31,2,سطات
-8,Berrechid,29,0,برشيد
-9,Sidi Bennour,17,0,سيدي بنور
-10,Région Rabat - Salé-Kenitra,1192,11,جهة الرباط سلا القنيطرة
-11,Salé,494,3,سلا
-12,Kénitra,352,5,القنيطرة
-13,Skhirate- Témara,168,2,الصخيات-تمارة
-14,Rabat,95,1,الرباط
-15,Sidi Kacem,55,0,سيدي قاسم
-16,Khémisset,23,0,الخميسات
-17,Sidi Slimane,5,0,سيدي سليمان
-18,Région Souss - Massa,400,10,جهة سوس ماسة
-19,Agadir-Ida -Ou-Tanane,210,6,أكادير إدا وتنان
-20,Taroudannt,76,1,تارودانت
-21,Inezgane- Ait Melloul,60,2,إنزكان آيت ملول
-22,Tiznit,39,0,تزنيت
-23,Chtouka- Ait Baha,15,1,اشتوكة آيت باها
-24,Région Tanger -Tétouan- Al Hoceima,375,8,جهة طنجة تطوان الحسيمة
-25,Tanger-Assilah,117,1,طنجة-أصيلة
-26,Tétouan,92,4,تطوان
-27,Al Hoceima,60,2,الحسيمة
-28,M'Diq-Fnideq,56,0,المضيق الفنيدق
-29,Larache,30,1,العرائش
-30,Ouezzane,16,0,وزان
-31,Chefchaouen,4,0,شفشاون
-32,Région de l'Oriental,280,6,جهة الشق
-33,Oujda-Angad,92,2,وجدة - أنجاد
-34,Taourirt,62,0,تاوريرت
-35,Guercif,43,0,جرسيف
-36,Figuig,35,0,فجيج
-37,Berkane,30,2,بركان
-38,Nador,14,1,الناظور
-39,Jerada,2,0,جرادة
-40,Driouch,2,1,الدريوش
-41,Région Marrakech- Safi,268,6,جهة مراكش آسف
-42,Marrakech,129,4,مراكش
-43,Essaouira,44,2,الصويرة
-44,Youssoufia,25,0,اليوسفية
-45,Chichaoua,22,0,شيشاوة
-46,Rehamna,22,0,الرحامنة
-47,El Kelâa des  Sraghna,16,0,قلعة السراغنة
-48,Safi,7,0,آسف
-49,Al  Haouz,3,0,الحوز
-50,Région Darâa-Tafilalet,109,2,جهة درعة تافيلالت
-51,Midelt,39,0,ميدلت
-52,Errachidia,30,1,الرشيدية
-53,Tinghir,16,0,تنغي
-54,Zagora,14,0,زاكورة
-55,Ouarzazate,10,1,ورززات
-56,Région Dakhla-Oued Eddahab,106,0,جهة الداخلة وادي الذهب
-57,Oued Ed-Dahab,106,0,وادي الذهب
-58,Région Fès - Meknès,102,6,جهة فاس مكناس
-59,Taza,31,2,تازة
-60,Fès,29,2,فاس
-61,Sefrou,14,0,صفرو
-62,Taounate,12,1,تاونات
-63,Meknès,11,1,مكناس
-64,Boulemane,3,0,بولمان
-65,El  Hajeb,2,0,الحاجب
-66,Région Beni Mellal- Khénifra,73,4,جهة بن ملال خنيفرة
-67,Khouribga,31,0,خريبكة
-68,Azilal,17,0,أزيلال
-69,Béni Mellal,14,0,بن ملال
-70,Khénifra,10,1,خنيفرة
-71,Fquih Ben Salah,1,3,الفقيه بن صالح
-72,Région Guelmim –Oued Noun,67,4,جهة كلميم واد نون
-73,Guelmim,55,4,كلميم
-74,Sidi Ifni,10,0,سيدي إفن
-75,Assa-Zag,2,0,آسا الزاك
-76,Région Laâyoune - Sakia El Hamra,61,0,جهة العيون الساقية الحمراء
-77,Laâyoune,58,0,العيون
-78,Boujdour,2,0,بوجدور
-79,Tarfaya,1,0,طرفاية
+0,Région Grand Casablanca-Settat,1177,37,جهة الدار البيضاء سطات
+1,Casablanca,1005,29,الدار البيضاء
+2,Settat,45,0,سطات
+3,El Jadida,36,7,الجديدة
+4,Mohammadia,32,0,المحمدية
+5,Nouaceur,30,0,النواصر
+6,Médiouna,20,0,مديونة
+7,Berrechid,7,0,برشيد
+8,Benslimane,2,0,بن سليمان
+9,Sidi Bennour,0,1,سيدي بنور
+10,Région Rabat - Salé-Kenitra,953,9,جهة الرباط سلا القنيطرة
+11,Salé,393,4,سلا
+12,Kénitra,186,3,القنيطرة
+13,Skhirate- Témara,186,0,الصخيات-تمارة
+14,Rabat,130,0,الرباط
+15,Sidi Slimane,47,1,سيدي سليمان
+16,Khémisset,9,1,الخميسات
+17,Sidi Kacem,2,0,سيدي قاسم
+18,Région de l'Oriental,279,12,جهة الشق
+19,Oujda-Angad,183,2,وجدة - أنجاد
+20,Nador,67,2,الناظور
+21,Guercif,11,3,جرسيف
+22,Taourirt,8,5,تاوريرت
+23,Jerada,5,0,جرادة
+24,Driouch,2,0,الدريوش
+25,Figuig,2,0,فجيج
+26,Berkane,1,0,بركان
+27,Région Souss - Massa,228,8,جهة سوس ماسة
+28,Agadir-Ida -Ou-Tanane,85,3,أكادير إدا وتنان
+29,Inezgane- Ait Melloul,46,0,إنزكان آيت ملول
+30,Taroudannt,39,2,تارودانت
+31,Chtouka- Ait Baha,31,2,اشتوكة آيت باها
+32,Tiznit,27,1,تزنيت
+33,Région Tanger -Tétouan- Al Hoceima,165,3,جهة طنجة تطوان الحسيمة
+34,Tanger-Assilah,54,1,طنجة-أصيلة
+35,Ouezzane,30,0,وزان
+36,Tétouan,27,2,تطوان
+37,M'Diq-Fnideq,23,0,المضيق الفنيدق
+38,Chefchaouen,17,0,شفشاون
+39,Al Hoceima,14,0,الحسيمة
+40,Région Marrakech- Safi,148,5,جهة مراكش آسف
+41,Marrakech,62,1,مراكش
+42,Essaouira,31,3,الصويرة
+43,Youssoufia,22,1,اليوسفية
+44,El Kelâa des  Sraghna,21,0,قلعة السراغنة
+45,Chichaoua,6,0,شيشاوة
+46,Rehamna,6,0,الرحامنة
+47,Région Beni Mellal- Khénifra,83,5,جهة بن ملال خنيفرة
+48,Khénifra,26,0,خنيفرة
+49,Khouribga,25,2,خريبكة
+50,Azilal,12,1,أزيلال
+51,Fquih Ben Salah,12,0,الفقيه بن صالح
+52,Béni Mellal,8,2,بن ملال
+53,Région Dakhla-Oued Eddahab,48,0,جهة الداخلة وادي الذهب
+54,Oued Ed-Dahab,48,0,وادي الذهب
+55,Région Fès - Meknès,46,4,جهة فاس مكناس
+56,Fès,15,2,فاس
+57,Sefrou,15,1,صفرو
+58,Meknès,10,0,مكناس
+59,Taza,4,1,تازة
+60,Ifrane,2,0,إفران
+61,Région Darâa-Tafilalet,25,1,جهة درعة تافيلالت
+62,Midelt,18,0,ميدلت
+63,Zagora,3,1,زاكورة
+64,Ouarzazate,3,0,ورززات
+65,Tinghir,1,0,تنغي
+66,Région Laâyoune - Sakia El Hamra,16,0,جهة العيون الساقية الحمراء
+67,Laâyoune,16,0,العيون
+68,Région Guelmim –Oued Noun,2,0,جهة كلميم واد نون
+69,Guelmim,1,0,كلميم
+70,Sidi Ifni,1,0,سيدي إفن
