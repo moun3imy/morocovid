@@ -21,8 +21,8 @@ import pandas as pd
 """ 
 cleans the data provided by tabula-py, in case there are errors or missing columns
 """
-def clean_output(filename) : 
-    with open(output_file,mode = 'rt', encoding='UTF-8') as f : 
+def clean_output(output) : 
+    with open(output,mode = 'rt', encoding='UTF-8') as f : 
         with open('output2.csv',mode = 'w+', encoding='UTF-8') as out : 
             x = 1
             for line in f :
@@ -65,7 +65,8 @@ year = now.strftime("%y")
 
 
 
-today = "corona_" + today.format(day,month,year)
+today = today.format(day,month,year)
+pdf_file = "corona_" + today
 #construct the url for the bulletin of today
 final_url = base_url_november.format(day,month,year)
 
@@ -74,7 +75,7 @@ scraping_folder = path.join(path.dirname(__file__), 'pdfBulletins')
 # make the folder 
 if not os.path.exists(scraping_folder):
     os.mkdir(scraping_folder)
-filename = path.join(scraping_folder,today)
+filename = path.join(scraping_folder,pdf_file)
 
 print(final_url)
 print(filename)
