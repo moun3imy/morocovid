@@ -21,8 +21,8 @@ import pandas as pd
 """ 
 cleans the data provided by tabula-py, in case there are errors or missing columns
 """
-def clean_output() : 
-    with open('output.csv',mode = 'rt', encoding='UTF-8') as f : 
+def clean_output(filename) : 
+    with open(output_file,mode = 'rt', encoding='UTF-8') as f : 
         with open('output2.csv',mode = 'w+', encoding='UTF-8') as out : 
             x = 1
             for line in f :
@@ -65,7 +65,7 @@ year = now.strftime("%y")
 
 
 
-today = today.format(day,month,year)
+today = "corona_" + today.format(day,month,year)
 #construct the url for the bulletin of today
 final_url = base_url_november.format(day,month,year)
 
@@ -77,6 +77,7 @@ if not os.path.exists(scraping_folder):
 filename = path.join(scraping_folder,today)
 
 print(final_url)
+print(filename)
 
 #get the pdf
 with open(filename, 'wb') as f:
@@ -84,17 +85,20 @@ with open(filename, 'wb') as f:
     f.write(response)
 # analyze the pdf
 # this will generate the data in csv format in the file output.csv
-tabula.convert_into(filename, "output.csv", output_format="csv", pages=[2,3,4],java_options="-Dfile.encoding=UTF8")
-# read corona.csv to fix it (when the pdf reading file contains only 2 commas, add 0 and a second comma)
-clean_output()
+output_file = "output_" + today + ".csv"
+tabula.convert_into(filename, output_file, output_format="csv", pages=[2,3,4],java_options="-Dfile.encoding=UTF8")
+# read output.csv to fix it (when the pdf reading file contains only 2 commas, add 0 and a second comma)
+#TODO think when there are no cases nor deaths, or when there are no cases but there are deaths
+clean_output(output_file)
+# output1 is an itermediary file
 df = pd.read_csv("output2.csv", header = None)
-
 # rename columns
 df.columns = [ "Régions","Nouveaux Cas","Décès","Régions Ar"]
-# replace NaN with 0
+# replace NaN with 0 (this is because the number of deaths is not entred when there are not any)
 df = df.fillna(0)
-#write data to corona.csv
-df.to_csv("corona.csv",index=True)
+#write data to corona_today.csv
+final_corona_data = "corona_" + today + ".csv"
+df.to_csv(final_corona_data,index=True)
 print(df)
 
 
