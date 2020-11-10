@@ -53,12 +53,7 @@ url = "http://www.covidmaroc.ma/Pages/LESINFOAR.aspx"
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36'}
 base_url_november = "http://www.covidmaroc.ma/Documents/BULLETIN/BQ_COVID.{0}.{1}.{2}.pdf"
  
-# if there is no such folder, the script will create one automatically
-scraping_folder = path.join(path.dirname(__file__), 'pdfBulletins')
-# make the folder 
-if not os.path.exists(scraping_folder):
-    os.mkdir(scraping_folder)
-filename = path.join(scraping_folder,"corona1.pdf")
+today = "{0}-{1}-{2}"
 
 
 
@@ -68,19 +63,28 @@ day = now.strftime("%d").lstrip("0")
 month = now.strftime("%m").lstrip("0")
 year = now.strftime("%y")
 
+
+
+today = today.format(day,month,year)
 #construct the url for the bulletin of today
 final_url = base_url_november.format(day,month,year)
+
+# if there is no such folder, the script will create one automatically
+scraping_folder = path.join(path.dirname(__file__), 'pdfBulletins')
+# make the folder 
+if not os.path.exists(scraping_folder):
+    os.mkdir(scraping_folder)
+filename = path.join(scraping_folder,today)
 
 print(final_url)
 
 #get the pdf
 with open(filename, 'wb') as f:
     response = requests.get(final_url,headers = headers).content
-    print(response)
     f.write(response)
 # analyze the pdf
 # this will generate the data in csv format in the file output.csv
-tabula.convert_into("pdfBulletins/corona1.pdf", "output.csv", output_format="csv", pages=[2,3,4],java_options="-Dfile.encoding=UTF8")
+tabula.convert_into(filename, "output.csv", output_format="csv", pages=[2,3,4],java_options="-Dfile.encoding=UTF8")
 # read corona.csv to fix it (when the pdf reading file contains only 2 commas, add 0 and a second comma)
 clean_output()
 df = pd.read_csv("output2.csv", header = None)
