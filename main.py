@@ -66,7 +66,7 @@ year = now.strftime("%y")
 
 
 today = today.format(day,month,year)
-pdf_file = "corona_" + today
+pdf_file = "corona_" + today + ".pdf"
 #construct the url for the bulletin of today
 final_url = base_url_november.format(day,month,year)
 
