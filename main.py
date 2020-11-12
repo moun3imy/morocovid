@@ -52,7 +52,7 @@ def clean_output(output) :
 url = "http://www.covidmaroc.ma/Pages/LESINFOAR.aspx"
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36'}
 base_url_november = "http://www.covidmaroc.ma/Documents/BULLETIN/BQ_COVID.{0}.{1}.{2}.pdf"
- 
+  
 today = "{0}-{1}-{2}"
 
 
@@ -65,7 +65,10 @@ year = now.strftime("%y")
 
 
 
+
 today = today.format(day,month,year)
+
+
 pdf_file = "corona_" + today + ".pdf"
 #construct the url for the bulletin of today
 final_url = base_url_november.format(day,month,year)

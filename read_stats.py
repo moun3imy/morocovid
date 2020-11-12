@@ -5,6 +5,8 @@ import fitz
 import re
 
 
+#TODO generate all today's data (including cases for each city) in json format 
+#TODO generate it for every day since september
 """ 
 takes a string containing a number (whose digits may be separated by spaces, like "some texxt here 2 356 861")
 and returns the number within it (in previous example returns 2356861)
