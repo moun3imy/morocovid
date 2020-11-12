@@ -2,6 +2,7 @@
 # https://github.com/pymupdf/PyMuPDF
 # for Code Snippets : https://pymupdf.readthedocs.io/en/latest/tutorial.html
 import fitz
+import re
 
 
 """ 
@@ -24,13 +25,39 @@ takes a string containing a percentage (like "some texxt here 1,7%", "some rando
 and returns the percentage within it (in previous examples returns "1,7%", "37%")
 
 """
+#\d+(?:(\.|,)\d+)?%
+#\d+(\.|.)*\d*
 def process_percentage(string_with_percentage) : 
-    #TODO
-    pass
+    list_percentages = re.findall(r"\d+(?:,*\d+)?%",string_with_percentage)
+    if len(list_percentages) == 1 : 
+        return list_percentages[0]
 
 
     
+""" print(process_percentage("kjdshjfdhfkdfs 1%"))
+print(process_percentage("kjdshjfdhfkdfs 37,0%"))
+print(process_percentage("jhfdjksfhkjhdfh 36,35% jhfgkjhfdjgdf"))
+print(process_percentage("kdfjkdsjfkdsf 36,35% jhhfsdfkh")) """
 
+
+""" 
+takes a string containing an incidence factor (like "some texxt here 150/100000 ", "some random txt here 110,15/100000 ")
+and returns the incidence factor within it (in previous examples returns "150/100000", "110,15/100000")
+
+"""
+def process_incidence(string_with_incidence) : 
+    list_incidences = re.findall(r"\d+(?:,*\d+)?/100\.000",string_with_incidence)
+    if len(list_incidences) == 1 : 
+        return list_incidences[0]
+
+    
+""" 
+print(process_incidence("kjdshjfdhfkdfs 12,12/100.000%"))
+print(process_incidence("kjdshjfdhfkdfs 15/100.000"))
+print(process_incidence("jhfdjksfhkjhdfh 10/100000 jhfgkjhfdjgdf"))
+print(process_incidence("kdfjkdsjfkdsf 17.0/100.000 jhhfsdfkh")) """
+
+    
 total_cases = 0
 new_cases = 0
 total_excluded_cases = 0
@@ -109,31 +136,54 @@ for i in range(len(text)) :
 
 total_cases = process_number(total_cases_str)
 new_cases = process_number(new_cases_str)
+total_excluded_cases = process_number(total_excluded_cases_str)
+new_excluded_cases = process_number(new_excluded_cases_str)
+
+last_24h_tests = new_excluded_cases + new_cases
+total_tests = total_excluded_cases + total_cases
 
 
-total_excluded_cases = process_number()
-new_excluded_cases = process_number()
-total_deaths = process_number()
-new_deaths = process_number()
-total_recovered = process_number()
-new_recovered = process_number()
-total_active_cases = process_number()
-total_cumul_incidence_rate = process_number()
-last_24h_incidence_rate = process_number()
-case_fatality_rate = process_number()
-recovery_rate = process_number()
-total_severe_cases = process_number()
-last_24h_severe_cases = process_number()
-total_under_intubation = process_number()
-total_non_invasive_ventilation = process_number()
-covid_beds_occupation = process_number()
+total_deaths = process_number(total_deaths_str)
+new_deaths = process_number(new_deaths_str)
+total_recovered = process_number(total_recovered_str)
+new_recovered = process_number(new_recovered_str)
+total_active_cases = process_number(total_active_cases_str)
+total_cumul_incidence_rate = process_incidence(total_cumul_incidence_rate_str)
+last_24h_incidence_rate = process_incidence(last_24h_incidence_rate_str)
+case_fatality_rate = process_percentage(case_fatality_rate_str)
+recovery_rate = process_percentage(recovery_rate_str)
+total_severe_cases = process_number(total_severe_cases_str)
+last_24h_severe_cases = process_number(last_24h_severe_cases_str)
+total_under_intubation = process_number(total_under_intubation_str)
+total_non_invasive_ventilation = process_number(total_non_invasive_ventilation_str)
+covid_beds_occupation = process_percentage(covid_beds_occupation_str)
 
 
 
-last_24h_tests = 0
-total_24_total_tests = 0
 
 
-print(text)
+print(" total_cases: ",total_cases)
+print(" new_cases: ",new_cases)
+print("total_excluded_cases:  ",total_excluded_cases)
+print(" new_excluded_cases:  ",new_excluded_cases)
+print("total_deaths:  ",total_deaths)
+print("new_deaths:  ",new_deaths)
+print("total_recovered:  ",total_recovered)
+print("new_recovered:  ",new_recovered)
+print("total_active_cases:  ",total_active_cases)
+print("total_cumul_incidence_rate:  ",total_cumul_incidence_rate)
+print("last_24h_incidence_rate:  ",last_24h_incidence_rate)
+print("case_fatality_rate:  ",case_fatality_rate)
+print("recovery_rate:  ",recovery_rate)
+print("total_severe_cases:  ",total_severe_cases)
+print("last_24h_severe_cases:  ",last_24h_severe_cases)
+print("total_under_intubation:  ",total_under_intubation)
+print("total_non_invasive_ventilation:  ",total_non_invasive_ventilation)
+print("covid_beds_occupation:  ",covid_beds_occupation)
+print("last_24h_tests:  ",last_24h_tests)
+print("total_tests:  ",total_tests)
 
-print(process_number("some texxxttt here 2 356 861"))
+
+
+
+
