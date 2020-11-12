@@ -72,9 +72,12 @@ final_url = base_url_november.format(day,month,year)
 
 # if there is no such folder, the script will create one automatically
 scraping_folder = path.join(path.dirname(__file__), 'pdfBulletins')
+csv_folder  = path.join(path.dirname(__file__),"CSVs")
 # make the folder 
 if not os.path.exists(scraping_folder):
     os.mkdir(scraping_folder)
+if not os.path.exists(csv_folder):
+    os.mkdir(csv_folder)
 filename = path.join(scraping_folder,pdf_file)
 
 print(final_url)
@@ -99,7 +102,8 @@ df.columns = [ "Régions","Nouveaux Cas","Décès","Régions Ar"]
 df = df.fillna(0)
 #write data to corona_today.csv
 final_corona_data = "corona_" + today + ".csv"
-df.to_csv(final_corona_data,index=True)
+final_csv_path = path.join(csv_folder,final_corona_data)
+df.to_csv(final_csv_path,index=True)
 print(df)
 
 

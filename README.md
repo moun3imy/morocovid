@@ -20,5 +20,6 @@
 
 # Results
 
-you get the results in the file ```corona.csv```, generated in the same folder  
-the link is : https://github.com/moun3imy/morocovid/blob/master/corona.csv
+The results are generated in the folder CSVs, 
+the link is : https://github.com/moun3imy/morocovid/blob/master/CSVs/corona_{day}-{month}-{year}.csv
+day, month and year should be provided in two digit format, without any leading zeros in case it's a single digit
