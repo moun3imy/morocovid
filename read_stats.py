@@ -43,8 +43,8 @@ print(process_percentage("kdfjkdsjfkdsf 36,35% jhhfsdfkh")) """
 
 
 """ 
-takes a string containing an incidence factor (like "some texxt here 150/100000 ", "some random txt here 110,15/100000 ")
-and returns the incidence factor within it (in previous examples returns "150/100000", "110,15/100000")
+takes a string containing an incidence factor (like "some texxt here 150/100.000 ", "some random txt here 110,15/100.000 ")
+and returns the incidence factor within it (in previous examples returns "150/100.000", "110,15/100.000")
 
 """
 def process_incidence(string_with_incidence) : 
