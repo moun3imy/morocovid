@@ -20,9 +20,13 @@
 
 # Results
 
+1. **covid-19 statistics per region** :
 The results are generated in the folder CSVs, 
 the link is : https://github.com/moun3imy/morocovid/blob/master/CSVs/corona_{day}-{month}-{year}.csv  
-day, month and year should be provided in two digit format, without any leading zeros in case it's a single digit
+*day*, *month* and *year* should be provided in two digit format, without any leading zeros in case it's a single digit
 
+2. **covid-19 statistics nationally** :
 
+execute : ```python read_stats.py ```  
+this script will generate a dictionary containing all necessary statistics about COVID-19 on a national level
 
