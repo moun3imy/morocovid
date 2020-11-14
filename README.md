@@ -20,7 +20,7 @@
 
 # Results
 
-1. **covid-19 statistics per region** :
+1. **covid-19 statistics per region** :  
 The results are generated in the folder CSVs, 
 the link is : https://github.com/moun3imy/morocovid/blob/master/CSVs/corona_{day}-{month}-{year}.csv  
 *day*, *month* and *year* should be provided in two digit format, without any leading zeros in case it's a single digit

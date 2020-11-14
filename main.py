@@ -17,6 +17,7 @@ from os import path
 import datetime
 import tabula
 import pandas as pd
+import utils
 
 """ 
 cleans the data provided by tabula-py, in case there are errors or missing columns
@@ -49,29 +50,13 @@ def clean_output(output) :
                         final_line = ",".join(values)
                 out.write(final_line)
 
-url = "http://www.covidmaroc.ma/Pages/LESINFOAR.aspx"
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36'}
-base_url_november = "http://www.covidmaroc.ma/Documents/BULLETIN/BQ_COVID.{0}.{1}.{2}.pdf"
-  
-today = "{0}-{1}-{2}"
+today = utils.today()
 
+pdf_file = utils.get_todays_pdfFileName()
 
-
-# get the date and format it accordingly to the url pattern
-now = datetime.datetime.now()
-day = now.strftime("%d").lstrip("0")
-month = now.strftime("%m").lstrip("0")
-year = now.strftime("%y")
-
-
-
-
-today = today.format(day,month,year)
-
-
-pdf_file = "corona_" + today + ".pdf"
 #construct the url for the bulletin of today
-final_url = base_url_november.format(day,month,year)
+final_url = utils.get_url()
 
 # if there is no such folder, the script will create one automatically
 scraping_folder = path.join(path.dirname(__file__), 'pdfBulletins')

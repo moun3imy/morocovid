@@ -7,6 +7,7 @@ import fitz
 import re
 import datetime
 from os import path
+import utils
 
 
 #TODO generate all today's data (including cases for each city) in json format 
@@ -20,7 +21,7 @@ and returns the number within it (in previous example returns 2356861)
 """
 generate the pdf filename for today
 """
-def get_todays_pdfFileName() : 
+""" def get_todays_pdfFileName() : 
     today = "{0}-{1}-{2}"
     # get the date and format it accordingly to the url pattern
     now = datetime.datetime.now()
@@ -31,7 +32,7 @@ def get_todays_pdfFileName() :
     today = today.format(day,month,year)
 
     pdf_file = "corona_" + today + ".pdf"
-    return pdf_file
+    return pdf_file """
 
 def process_number(string_with_number) : 
     list_strings = string_with_number.split()
@@ -105,7 +106,7 @@ def read_stats() :
 
 
     scraping_folder = "D:/morocovid/pdfBulletins"
-    filename = path.join(scraping_folder,get_todays_pdfFileName())
+    filename = path.join(scraping_folder,utils.get_todays_pdfFileName())
 
     doc = fitz.open(filename)
 
