@@ -30,3 +30,8 @@ the link is : https://github.com/moun3imy/morocovid/blob/master/CSVs/corona_{day
 execute : ```python read_stats.py ```  
 this script will generate a dictionary containing all necessary statistics about COVID-19 on a national level
 
+3. **generate all coronavirus-2 data for today** : 
+
+execute : ```python .\covid_stats_json.py```
+this script will generate a dictionary containing all coronavirus-2 data for today
+
