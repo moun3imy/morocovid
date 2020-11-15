@@ -12,28 +12,13 @@ import utils
 
 #TODO generate all today's data (including cases for each city) in json format 
 #TODO generate it for every day since september
+
+
 """ 
 takes a string containing a number (whose digits may be separated by spaces, like "some texxt here 2 356 861")
 and returns the number within it (in previous example returns 2356861)
 
 """
-
-"""
-generate the pdf filename for today
-"""
-""" def get_todays_pdfFileName() : 
-    today = "{0}-{1}-{2}"
-    # get the date and format it accordingly to the url pattern
-    now = datetime.datetime.now()
-    day = now.strftime("%d").lstrip("0")
-    month = now.strftime("%m").lstrip("0")
-    year = now.strftime("%y")
-
-    today = today.format(day,month,year)
-
-    pdf_file = "corona_" + today + ".pdf"
-    return pdf_file """
-
 def process_number(string_with_number) : 
     list_strings = string_with_number.split()
     final_string =  ""
@@ -49,19 +34,10 @@ takes a string containing a percentage (like "some texxt here 1,7%", "some rando
 and returns the percentage within it (in previous examples returns "1,7%", "37%")
 
 """
-#\d+(?:(\.|,)\d+)?%
-#\d+(\.|.)*\d*
 def process_percentage(string_with_percentage) : 
     list_percentages = re.findall(r"\d+(?:,*\d+)?%",string_with_percentage)
     if len(list_percentages) == 1 : 
         return list_percentages[0]
-
-
-    
-""" print(process_percentage("kjdshjfdhfkdfs 1%"))
-print(process_percentage("kjdshjfdhfkdfs 37,0%"))
-print(process_percentage("jhfdjksfhkjhdfh 36,35% jhfgkjhfdjgdf"))
-print(process_percentage("kdfjkdsjfkdsf 36,35% jhhfsdfkh")) """
 
 
 """ 
@@ -73,13 +49,6 @@ def process_incidence(string_with_incidence) :
     list_incidences = re.findall(r"\d+(?:,*\d+)?/100\.000",string_with_incidence)
     if len(list_incidences) == 1 : 
         return list_incidences[0]
-
-    
-""" 
-print(process_incidence("kjdshjfdhfkdfs 12,12/100.000%"))
-print(process_incidence("kjdshjfdhfkdfs 15/100.000"))
-print(process_incidence("jhfdjksfhkjhdfh 10/100000 jhfgkjhfdjgdf"))
-print(process_incidence("kdfjkdsjfkdsf 17.0/100.000 jhhfsdfkh")) """
 
 
 def read_stats() : 
@@ -104,9 +73,8 @@ def read_stats() :
     last_24h_tests = 0
     total_tests = 0
 
-
     scraping_folder = "D:/morocovid/pdfBulletins"
-    filename = path.join(scraping_folder,utils.get_todays_pdfFileName())
+    filename = path.join(scraping_folder,utils.get_todays_fileName("pdf"))
 
     doc = fitz.open(filename)
 
@@ -213,11 +181,10 @@ def read_stats() :
     "total_non_invasive_ventilation" : total_non_invasive_ventilation,
     "covid_beds_occupation" : covid_beds_occupation
     }
-    print(dict_corona)
     return dict_corona
 
-read_stats()
-
+if __name__ == "__main__":
+     print(read_stats())
 
 
 

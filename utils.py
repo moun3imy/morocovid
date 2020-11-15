@@ -11,10 +11,6 @@ def today() :
 
     today_str = today_str.format(day,month,year)
     return today_str
-def get_todays_pdfFileName() : 
-    today_str = today()
-    pdf_file = "corona_" + today_str + ".pdf"
-    return pdf_file
 
 def get_url() : 
     now = datetime.datetime.now()
@@ -24,3 +20,8 @@ def get_url() :
     base_url_november = "http://www.covidmaroc.ma/Documents/BULLETIN/BQ_COVID.{0}.{1}.{2}.pdf"
     final_url = base_url_november.format(day,month,year)
     return final_url
+
+def get_todays_fileName(file_type) :
+    today_str = today()
+    filename = "corona_" + today_str + "." + file_type
+    return filename

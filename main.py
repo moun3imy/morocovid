@@ -57,7 +57,7 @@ def generate_csv() :
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36'}
     today = utils.today()
 
-    pdf_file = utils.get_todays_pdfFileName()
+    pdf_file = utils.get_todays_fileName("pdf")
 
     #construct the url for the bulletin of today
     final_url = utils.get_url()
@@ -93,7 +93,7 @@ def generate_csv() :
     df = pd.read_csv("output2.csv", header = None)
     # rename columns
     df.columns = [ "Régions","Nouveaux Cas","Décès","Régions Ar"]
-    # replace NaN with 0 (this is because the number of deaths is not entred when there are not any)
+    # replace NaN with 0 (this is because the number of deaths is not entered when there are not)
     df = df.fillna(0)
     #write data to corona_today.csv
     final_corona_data = "corona_" + today + ".csv"
