@@ -6,6 +6,8 @@ this script will :
 4. export the final data to a CSV file in the same directory
 5. TODO export the data in JSON format
 6. TODO make a REST API out of this data
+7.  # TODO analyse the page at "http://www.covidmaroc.ma/Pages/LESINFOAR.aspx"
+    # get all the pdf links and download them, without folowwing the pattern of the url using BeautifulSoup Library
 
 """
 
@@ -50,54 +52,60 @@ def clean_output(output) :
                         final_line = ",".join(values)
                 out.write(final_line)
 
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36'}
-today = utils.today()
+def generate_csv() : 
 
-pdf_file = utils.get_todays_pdfFileName()
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36'}
+    today = utils.today()
 
-#construct the url for the bulletin of today
-final_url = utils.get_url()
+    pdf_file = utils.get_todays_pdfFileName()
 
-# if there is no such folder, the script will create one automatically
-scraping_folder = path.join(path.dirname(__file__), 'pdfBulletins')
-csv_folder  = path.join(path.dirname(__file__),"CSVs")
-# make the folder 
-if not os.path.exists(scraping_folder):
-    os.mkdir(scraping_folder)
-if not os.path.exists(csv_folder):
-    os.mkdir(csv_folder)
-filename = path.join(scraping_folder,pdf_file)
+    #construct the url for the bulletin of today
+    final_url = utils.get_url()
 
-print(final_url)
-print(filename)
+    # if there is no such folder, the script will create one automatically
+    scraping_folder = path.join(path.dirname(__file__), 'pdfBulletins')
+    csv_folder  = path.join(path.dirname(__file__),"CSVs")
+    # make the folder 
+    if not os.path.exists(scraping_folder):
+        os.mkdir(scraping_folder)
+    if not os.path.exists(csv_folder):
+        os.mkdir(csv_folder)
+    filename = path.join(scraping_folder,pdf_file)
 
-#get the pdf
-with open(filename, 'wb') as f:
-    response = requests.get(final_url,headers = headers).content
-    f.write(response)
-# analyze the pdf
-# this will generate the data in csv format in the file output.csv
-output_file = "output_" + today + ".csv"
-tabula.convert_into(filename, output_file, output_format="csv", pages=[2,3,4],java_options="-Dfile.encoding=UTF8")
-# read output.csv to fix it (when the pdf reading file contains only 2 commas, add 0 and a second comma)
-#TODO think when there are no cases nor deaths, or when there are no cases but there are deaths
-clean_output(output_file)
-# output1 is an itermediary file
-df = pd.read_csv("output2.csv", header = None)
-# rename columns
-df.columns = [ "Régions","Nouveaux Cas","Décès","Régions Ar"]
-# replace NaN with 0 (this is because the number of deaths is not entred when there are not any)
-df = df.fillna(0)
-#write data to corona_today.csv
-final_corona_data = "corona_" + today + ".csv"
-final_csv_path = path.join(csv_folder,final_corona_data)
-df.to_csv(final_csv_path,index=True)
-print(df)
+    print(final_url)
+    print(filename)
+
+    #get the pdf
+    with open(filename, 'wb') as f:
+        response = requests.get(final_url,headers = headers)
+        if response.status_code == 200 : 
+            f.write(response.content)
+        else : 
+            return ("Invalid URL or unresponsive server")
+    # analyze the pdf
+    # this will generate the data in csv format in the file output.csv
+    output_file = "output_" + today + ".csv"
+    tabula.convert_into(filename, output_file, output_format="csv", pages=[2,3,4],java_options="-Dfile.encoding=UTF8")
+    # read output.csv to fix it (when the pdf reading file contains only 2 commas, add 0 and a second comma)
+    #TODO think when there are no cases nor deaths, or when there are no cases but there are deaths
+    clean_output(output_file)
+    # output1 is an itermediary file
+    df = pd.read_csv("output2.csv", header = None)
+    # rename columns
+    df.columns = [ "Régions","Nouveaux Cas","Décès","Régions Ar"]
+    # replace NaN with 0 (this is because the number of deaths is not entred when there are not any)
+    df = df.fillna(0)
+    #write data to corona_today.csv
+    final_corona_data = "corona_" + today + ".csv"
+    final_csv_path = path.join(csv_folder,final_corona_data)
+    df.to_csv(final_csv_path,index=True)
+    return df
+
+if __name__ == "__main__":
+    print(generate_csv())
 
 
 
 
 
 
-# TODO analyse the page at "http://www.covidmaroc.ma/Pages/LESINFOAR.aspx"
-# get all the pdf links and download them, without folowwing the pattern of the url using BeautifulSoup Library
