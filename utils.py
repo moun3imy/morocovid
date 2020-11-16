@@ -17,7 +17,7 @@ def get_url() :
     day = now.strftime("%d").lstrip("0")
     month = now.strftime("%m").lstrip("0")
     year = now.strftime("%y")
-    base_url_november = "http://www.covidmaroc.ma/Documents/BULLETIN/BQ_COVID.{0}.{1}.{2}.pdf"
+    base_url_november = "http://www.covidmaroc.ma/Documents/BULLETIN/BQ_COVID_{0}-{1}-{2}.pdf"
     final_url = base_url_november.format(day,month,year)
     return final_url
 
