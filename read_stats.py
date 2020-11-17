@@ -51,7 +51,7 @@ def process_incidence(string_with_incidence) :
         return list_incidences[0]
 
 
-def read_stats() : 
+def read_stats(pdf_filename) : 
     total_cases = 0
     new_cases = 0
     total_excluded_cases = 0
@@ -74,7 +74,7 @@ def read_stats() :
     total_tests = 0
 
     scraping_folder = "D:/morocovid/pdfBulletins"
-    filename = path.join(scraping_folder,utils.get_todays_fileName("pdf"))
+    filename = path.join(scraping_folder,pdf_filename)
 
     doc = fitz.open(filename)
 
@@ -184,7 +184,7 @@ def read_stats() :
     return dict_corona
 
 if __name__ == "__main__":
-     print(read_stats())
+     print(read_stats(utils.get_todays_fileName("pdf")))
 
 
 
