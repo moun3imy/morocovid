@@ -18,7 +18,7 @@ fifth_format = "http://www.covidmaroc.ma/Documents/BULLETIN/BQ_COVID_{0}-{1}-20.
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36'}
 
 start_date = "04-09-2020"
-end_date = "10-09-2020"
+end_date = "19-11-2020"
 
 start = datetime.strptime(start_date,"%d-%m-%Y")
 end = datetime.strptime(end_date,"%d-%m-%Y")
@@ -29,13 +29,13 @@ date = start
 #  construct the proper URL
 
 while date <= end : 
-    if datetime(2020,9,4)<=date and date <= datetime(2020,9,30) : 
+    if datetime(2020,9,4)<= date <= datetime(2020,9,30) : 
         url = first_format.format(str(date.day), str(date.month))
-    elif datetime(2020,10,1)<=date and date <= datetime(2020,10,7) : 
+    elif datetime(2020,10,1)<= date  <= datetime(2020,10,7) : 
         url = second_format.format(str(date.day))
-    elif datetime(2020,10,8)<=date and date <= datetime(2020,10,31) : 
+    elif datetime(2020,10,8)<= date  <= datetime(2020,10,31) : 
         url = third_format.format(str(date.day))
-    elif datetime(2020,11,1)<=date and date <= datetime(2020,11,15) : 
+    elif datetime(2020,11,1)<= date <= datetime(2020,11,15) : 
         url = fourth_format.format(str(date.day), str(date.month))
     elif datetime(2020,11,16) <= date  : 
         url = fifth_format.format(str(date.day), str(date.month))
