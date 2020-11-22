@@ -9,6 +9,8 @@ __pycache__/
 
 # files beginning by "output"
 output*
+corona_random*
+
 
 #all csv files beginning by "corona_corona"
 corona_corona*

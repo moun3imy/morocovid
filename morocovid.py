@@ -2,7 +2,7 @@ import argparse
 import covid_stats_json
 import utils
 
-parser = argparse.ArgumentParser("Generate Morocco's COVID-19  data ")
+parser = argparse.ArgumentParser(prog = "morocovid", description="Generate Morocco's COVID-19  data ")
 parser.add_argument('Date',
                     type = str,
                     help = 'date to generate the data for,\n provided in dd-MM-yy with non padding zero when day or month are <10'
