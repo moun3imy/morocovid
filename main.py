@@ -102,6 +102,9 @@ def generate_csv() :
     df.to_csv(final_csv_path,index=True)
     return df
 
+
+
+
 if __name__ == "__main__":
     print(generate_csv())
 
